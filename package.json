@@ -1,13 +1,14 @@
 {
-  "private":true,
+  "private": true,
   "name": "webpack-project",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack server",
+    "start": "webpack serve --port 3000",
     "watch": "webpack --watch",
-    "build": "webpack"
+    "build": "cross-env NODE_ENV=production webpack",
+    "build-dev": "webpack"
   },
   "repository": {
     "type": "git",
@@ -21,8 +22,17 @@
   },
   "homepage": "https://github.com/morijenab/wenpack-config#readme",
   "devDependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.14.0",
+    "@babel/preset-env": "^7.14.0",
+    "babel-loader": "^8.2.2",
+    "cross-env": "^7.0.3",
     "webpack": "^5.36.2",
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^3.11.2"
+  },
+  "devServer": {
+    "inline": true,
+    "port": 3000
   }
 }

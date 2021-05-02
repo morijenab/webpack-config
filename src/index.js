@@ -4,4 +4,4 @@ const elvenShieldRecipe = {
   refinedMoonstone: 4,
 };
 
-console.log(elvenShieldRecipe);
+console.log("2", { ...elvenShieldRecipe, test: 2 });
