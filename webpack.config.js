@@ -10,13 +10,17 @@ module.exports = {
     contentBase: "./dist",
     hot: true,
   },
+  output: {
+    assetModuleFilename: "images/[hash][query]",
+  },
   module: {
     rules: [
+      { test: /\.(png|jpe?g|gif|svg)$/i, type: "asset/resource" },
       {
         test: /\.s?css$/i,
         exclude: /node_modules/,
         use: [
-          MiniCssExtractPlugin.loader,
+          { loader: MiniCssExtractPlugin.loader, options: { publicPath: "" } },
           "css-loader",
           "postcss-loader",
           "sass-loader",

@@ -1,8 +1,8 @@
 const APP = () => (
-  <section>
+  <div className="app">
     <h1>React :)</h1>
     <p>React without CRA</p>
-  </section>
+  </div>
 );
 
 export default APP;
