@@ -1,1 +1,1 @@
-# wenpack-config
+# webpack-config
