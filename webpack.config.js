@@ -31,15 +31,22 @@ module.exports = {
         ],
       },
       {
-        test: /\.jsx?$/,
+        test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
+          options: {
+            presets: [
+              "@babel/preset-env",
+              "@babel/preset-react",
+              "@babel/preset-typescript",
+            ],
+          },
         },
       },
     ],
   },
-  resolve: { extensions: [".js", ".jsx"] },
+  resolve: { extensions: [".tsx", ".ts", ".js"] },
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
